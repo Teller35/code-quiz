@@ -31,7 +31,7 @@
   
 }
 
-.st-btn, .guess {
+.st-btn, .guess, .submit {
     font-weight: bold;
     font-size: medium;
     text-align: center;
@@ -42,3 +42,9 @@
     box-shadow: 0 0 15px rgb(0,0,0,0.5);
 }
 
+.input {
+    width: 180px;
+    height: 30px;
+    font-weight: bold;
+    font-size: large;
+}

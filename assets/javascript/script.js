@@ -4,13 +4,14 @@ var mainEl = document.querySelector(".welcome");
 var answerEl = document.querySelector(".info");
 var startBtn = document.querySelector("#start");
 var resultEl = document.querySelector(".result");
+var endEl = document.querySelector(".end");
 var number = 0;
 var highScores = [];
 var score = 0;
 var game = true;
 var correct = 0;
 var wrong = 0;
-var timeLeft = 45;
+var timeLeft = 5;
 var questions = [
     {
      q: "Commonly used data types DO Not include?",
@@ -19,13 +20,13 @@ var questions = [
     },
     {
      q: "A very useful tool used during development and debugging for printing content to the debugger is?",
-     o: ["JavaScrip", "Terminal/Bash", "For Loops", "Console.log"],
-     a: "4"
+     o: ["JavaScrip", "Console.log", "Terminal/Bash", "For Loops"],
+     a: "2"
     },
     {
       q: "String values must be enclosed within ________ when being assigned to variables?",
-      o: ["Commas", "Curly Brackets", "Quotes", "Parenthesis"],
-      a: "3"
+      o: ["Quotes", "Commas", "Curly Brackets",  "Parenthesis"],
+      a: "1"
     },
     {
       q: "Arrays in JavaScript can be used to store _________?",
@@ -52,7 +53,7 @@ function countdown() {
         else {
             timeEl.textContent = "";
             clearInterval(timeInterval);
-            // endQuiz();
+            endQuiz();
         }
     }, 1000);
 }
@@ -78,6 +79,7 @@ function quiz() {
 }
 }
 
+
 answerGuess = function(event) {
     var targetEl = event.target;
     if(targetEl.matches(".guess")) {
@@ -88,7 +90,7 @@ answerGuess = function(event) {
 
 guessCorrect = function(guessEl) {
     if(guessEl === answer) {
-        timeLeft = timeLeft + 3;
+        timeLeft = timeLeft + 1;
         correct++;
         resultEl.textContent = "Correct!";
         quiz();
@@ -102,9 +104,47 @@ guessCorrect = function(guessEl) {
 }
 
 endQuiz = function() {
+    resultEl.remove();
+    mainEl.textContent = "Let's see how you did!";
+    answerEl.textContent = "You got " + correct + " correct and " + wrong + " wrong!";
+    
+    var input = document.createElement("input");
+    input.className = "initials";
+    input.setAttribute("name", "initials")
+    input.setAttribute("type", "text");
+    input.setAttribute("placeholder", "Enter Your Initials!");
+    input.className = "input";
+    var submit = document.createElement("button");
+    submit.className = "submit";
+    submit.setAttribute("type", "submit");
+    submit.textContent = "Submit";
+    endEl.appendChild(input);
+    endEl.appendChild(submit);
+}
 
+saveScore = function(event) {
+    event.preventDefault();
+    var target = event.target;
+    if(target.matches(".submit")) {
+        var form = document.querySelector(".initials");
+        if(!form) {
+            alert("Save your hard work!");
+            return;
+        }
+        else {
+            var highScoreObj = {
+                initials: form,
+                score: correct,
+            }
+            highScores.push(highScoreObj);
+            localStorage.setItem("Highscores", JSON.stringify(highScores));
+
+        }
+    }
 }
 
 
 startBtn.addEventListener("click", startQuiz);
 answerEl.addEventListener("click", answerGuess);
+endEl.addEventListener("click", saveScore);
+
