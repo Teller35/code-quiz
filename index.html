@@ -5,20 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="../code-quiz/assets/css/stylessheeet.css"/>
+    <link rel="stylesheet" href="../code-quiz/assets/css/stylesheet.css"/>
 </head>
 <body>
     <header class="head">
         <a href="" class="highscore">HighScores</a>
-        <div class="timer">Time:</div>
+        <div class="timer">Time:
+            <span id="time">45</span>
+        </div>
     </header>
     <main class="main">
         <h1 class="welcome">Ready to test you brain?</h1>
         <h3 class="info">Here you wil be tested on your knowledge about javascript. Each correct answer earns you 5 seconds back and every wrong answer takes 5 seconds away. Take your time you have 45 seconds to begin with and GOOD LUCK!</h3>
-        <div class="container">
-            <button class="st-btn" id="start">Start Quiz</button>
-        </div>
+        <button class="st-btn" id="start">Start Quiz</button>
     </main>
+        
     
     <script src="../code-quiz/assets/javascript/script.js"></script>
     

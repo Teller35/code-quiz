@@ -1,76 +1,57 @@
 // // Body element reference
-var timeEl = document.getElementsByClassName("timer");
-var mainEl = document.getElementsByClassName("main");
-var message = "Congratulations you got to a message and timer!"
-// var questions = [
-//     {
-//         q: "Commonly used data types DO Not include?",
-//         o: {
-//             a: "Strings",
-//             b: "Booleans",
-//             c: "Alerts",
-//             d: "Numbers",
-//         },
-//         a: "c"
-//     },
-//     {
-//         q: "A very useful tool used during development and debugging for printing content to the debugger is?",
-//         o: {
-//             a: "JavaScrip",
-//             b: "Terminal/Bash",
-//             c: "For Loops",
-//             d: "Console.log",
-//         },
-//         a: "d"
-//     },
-//     {
-//         q: "String values must be enclosed within ________ when being assigned to variables?",
-//         o: {
-//             a: "Commas",
-//             b: "Curly Brackets",
-//             c: "Quotes",
-//             d: "Parenthesis",
-//         },
-//         a: "c"
-//     },
-//     {
-//         q: "Arrays in JavaScript can be used to store _________?",
-//         o: {
-//             a: "Number and Strings",
-//             b: "Other Arrays",
-//             c: "Booleans",
-//             d: "All Of The Above",
-//         },
-//         a: "d"
-//     },
-//     {
-//         q: "The condition in an if / else statement is enclosed with _________?",
-//         o: {
-//             a: "Quotes",
-//             b: "Curly Brackets",
-//             c: "Parenthesis",
-//             d: "Square Brackets",
-//         },
-//         a: "c"
-//     },
-// ]
+var timeEl = document.getElementById("time");
+var mainEl = document.getElementsByClassName("welcome");
+var startBtn =document.getElementById("start");
+var highScores = [];
+var score = 0;
+var questions = [
+    {
+     question: "Commonly used data types DO Not include?",
+     options: ["Strings", "Booleans", "Alerts", "Numbers"],
+     answer: "3"
+    },
+    {
+     question: "A very useful tool used during development and debugging for printing content to the debugger is?",
+     options: ["JavaScrip", "Terminal/Bash", "For Loops", "Console.log"],
+     answer: "4"
+    },
+    {
+      question: "String values must be enclosed within ________ when being assigned to variables?",
+      options: ["Commas", "Curly Brackets", "Quotes", "Parenthesis"],
+      answer: "3"
+    },
+    {
+      question: "Arrays in JavaScript can be used to store _________?",
+      options: ["Number and Strings", "Other Arrays", "Booleans", "All Of The Above"],
+      answer: "4"
+    },
+    {
+      question: "The condition in an if / else statement is enclosed with _________?",
+      options: ["Quotes", "Curly Brackets", "Parenthesis", "Square Brackets"],
+      answer: "3"
+    },
+]
 
 function countdown() {
-    var timeLeft = 10;
+    var timeLeft = 45;
     var timeInterval = setInterval(function() {
         if (timeLeft > 1) {
-            timeEl.textContent = "Time: " + timeLeft;
+            timeEl.textContent = timeLeft;
+            timeLeft--;
         }
         else {
             timeEl.textContent = "";
             clearInterval(timeInterval);
-            displayMessage();
         }
-    }, 1000)
+    }, 1000);
 }
 
-function displayMessage() {
-    mainEl.textContent = message;
+var quiz = function(){
+    for (var i = 0; i < questions.length; i++) {
+        var answer = confirm(questions[i].question);
+        
+    }
 }
 
-startBtn.onclick = countdown;
+
+startBtn.onclick = quiz;
