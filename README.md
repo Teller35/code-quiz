@@ -11,10 +11,10 @@ Screenshot css
 ![image](https://user-images.githubusercontent.com/79383305/114312111-bc5b0200-9aae-11eb-8293-0f6bc99cda4b.png)
 Screenshot java
 ![image](https://user-images.githubusercontent.com/79383305/114312132-d09eff00-9aae-11eb-900e-ae8f9e230cb3.png)
-![image](https://user-images.githubusercontent.com/79383305/114312145-dac0fd80-9aae-11eb-8051-0beb0ce06388.png)
-![image](https://user-images.githubusercontent.com/79383305/114312155-e1e80b80-9aae-11eb-8592-0314898aba61.png)
-![image](https://user-images.githubusercontent.com/79383305/114312158-e9a7b000-9aae-11eb-96c1-45c90921c8c7.png)
-![image](https://user-images.githubusercontent.com/79383305/114312164-f0cebe00-9aae-11eb-9471-6efbbb2c71dc.png)
+![image](https://user-images.githubusercontent.com/79383305/114313013-0396c200-9ab2-11eb-99e8-011e742b9620.png)
+![image](https://user-images.githubusercontent.com/79383305/114313022-0c879380-9ab2-11eb-9eb8-2184f2c8982a.png)
+![image](https://user-images.githubusercontent.com/79383305/114313030-14473800-9ab2-11eb-90ad-22cf9685c953.png)
+![image](https://user-images.githubusercontent.com/79383305/114313041-1d380980-9ab2-11eb-9dbc-58b0e5e377aa.png)
 
 Built With HTML CSS  JavaScript Website https://teller35.github.io/code-quiz/ ; https://github.com/Teller35/code-quiz
 
