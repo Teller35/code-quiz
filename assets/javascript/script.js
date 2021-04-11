@@ -1,18 +1,18 @@
 // // Body element reference
-var timeEl = document.querySelector("#time");
+var timeEl = document.querySelector(".time");
 var mainEl = document.querySelector(".welcome");
 var answerEl = document.querySelector(".info");
 var startBtn = document.querySelector("#start");
+var scoreBtn = document.querySelector(".highscore");
 var resultEl = document.querySelector(".result");
 var endEl = document.querySelector(".end");
-var playEl = document.querySelector(".play");
 var number = 0;
 var highScores = [];
 var score = 0;
-var game = true;
 var correct = 0;
 var wrong = 0;
 var timeLeft = 5;
+var timeInterval;
 var questions = [
     {
      q: "Commonly used data types DO Not include?",
@@ -46,7 +46,7 @@ function startQuiz() {
     quiz();
 }
 function countdown() {
-    var timeInterval = setInterval(function() {
+    timeInterval = setInterval(function() {
         if (timeLeft > 1) {
             timeEl.textContent = timeLeft;
             timeLeft--;
@@ -61,7 +61,7 @@ function countdown() {
 
 function quiz() {
     if (number === questions.length) {
-        game = false;
+        endQuiz();
     }
     else {
     var question = questions[number].q;
@@ -76,6 +76,7 @@ function quiz() {
         buttonEl.textContent = `${[i+1]}. ${options[i]}`;
         answerEl.appendChild(buttonEl);
     }
+    
     number++;
 }
 }
@@ -106,9 +107,9 @@ guessCorrect = function(guessEl) {
 
 endQuiz = function() {
     resultEl.remove();
+    clearInterval(timeInterval);
     mainEl.textContent = "Let's see how you did!";
     answerEl.textContent = "You got " + correct + " correct and " + wrong + " wrong!";
-    
     var input = document.createElement("input");
     input.setAttribute("name", "initials")
     input.setAttribute("type", "text");
@@ -141,12 +142,15 @@ saveScore = function(event) {
             localStorage.setItem("scores", JSON.stringify(highScores));
         }
     }
+    startQuiz();
 }
 
-
-
+function highScores() {
+    
+}
 
 startBtn.addEventListener("click", startQuiz);
+scoreBtn.addEventListener("click", highScores);
 answerEl.addEventListener("click", answerGuess);
 endEl.addEventListener("click", saveScore);
 
