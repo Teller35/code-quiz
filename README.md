@@ -16,7 +16,7 @@ Screenshot java
 ![image](https://user-images.githubusercontent.com/79383305/114312158-e9a7b000-9aae-11eb-96c1-45c90921c8c7.png)
 ![image](https://user-images.githubusercontent.com/79383305/114312164-f0cebe00-9aae-11eb-9471-6efbbb2c71dc.png)
 
-Built With HTML CSS  JavaScript Website https://teller35.github.io/code-quiz/
+Built With HTML CSS  JavaScript Website https://teller35.github.io/code-quiz/ ; https://github.com/Teller35/code-quiz
 
-Contribution Made with ❤️ by Francis "Teller" Wetzel
+Built with ❤️ by Francis "Teller" Wetzel
 
