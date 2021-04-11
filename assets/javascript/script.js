@@ -109,7 +109,6 @@ endQuiz = function() {
     answerEl.textContent = "You got " + correct + " correct and " + wrong + " wrong!";
     
     var input = document.createElement("input");
-    input.className = "initials";
     input.setAttribute("name", "initials")
     input.setAttribute("type", "text");
     input.setAttribute("placeholder", "Enter Your Initials!");
@@ -126,19 +125,19 @@ saveScore = function(event) {
     event.preventDefault();
     var target = event.target;
     if(target.matches(".submit")) {
-        var form = document.querySelector(".initials");
-        if(!form) {
+        var form = document.querySelector(".input");
+        var playInitials = form.value;
+        if(!playInitials) {
             alert("Save your hard work!");
             return;
         }
         else {
-            var highScoreObj = {
-                initials: form,
-                score: correct,
+            var highScoresObj = {
+                initials: playInitials,
+                score: correct
             }
-            highScores.push(highScoreObj);
-            localStorage.setItem("Highscores", JSON.stringify(highScores));
-
+            highScores.push(highScoresObj);
+            localStorage.setItem("scores", JSON.stringify(highScores));
         }
     }
 }
