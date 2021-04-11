@@ -109,6 +109,11 @@ endQuiz = function() {
     clearInterval(timeInterval);
     mainEl.textContent = "Let's see how you did!";
     answerEl.textContent = "You got " + correct + " correct and " + wrong + " wrong!";
+    if (correct < score) {
+        
+        endEl.textContent = "You did not bet the high score try again!";
+    }
+    else {
     var input = document.createElement("input");
     input.setAttribute("name", "initials")
     input.setAttribute("type", "text");
@@ -120,6 +125,7 @@ endQuiz = function() {
     submit.textContent = "Submit";
     endEl.appendChild(input);
     endEl.appendChild(submit);
+    }
 }
 
 saveScore = function(event) {
@@ -139,8 +145,8 @@ saveScore = function(event) {
     }
 }
 
+var score = localStorage.getItem("score");
 function highScores() {
-    var score = localStorage.getItem("score");
     var initials = localStorage.getItem("initials");
     if (!score || !initials) {
         alert("No high score yet!");
