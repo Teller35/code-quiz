@@ -10,7 +10,7 @@ var endEl = document.querySelector(".end");
 var number = 0;
 var correct = 0;
 var wrong = 0;
-var timeLeft = 30;
+var timeLeft = 29;
 var timeInterval;
 var questions = [
     {
