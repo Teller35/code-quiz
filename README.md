@@ -1,4 +1,4 @@
-# code-quiz
+# 
 CODE Quiz Purpose A website that offers fitness training services.
 
 Built With HTML CSS Website https://teller35.github.io/run-buddy/

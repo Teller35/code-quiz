@@ -5,6 +5,7 @@ var answerEl = document.querySelector(".info");
 var startBtn = document.querySelector("#start");
 var resultEl = document.querySelector(".result");
 var endEl = document.querySelector(".end");
+var playEl = document.querySelector(".play");
 var number = 0;
 var highScores = [];
 var score = 0;
@@ -90,7 +91,7 @@ answerGuess = function(event) {
 
 guessCorrect = function(guessEl) {
     if(guessEl === answer) {
-        timeLeft = timeLeft + 1;
+        timeLeft = timeLeft + 3;
         correct++;
         resultEl.textContent = "Correct!";
         quiz();
@@ -143,7 +144,10 @@ saveScore = function(event) {
 }
 
 
+
+
 startBtn.addEventListener("click", startQuiz);
 answerEl.addEventListener("click", answerGuess);
 endEl.addEventListener("click", saveScore);
+
 
