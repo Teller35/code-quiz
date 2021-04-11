@@ -4,14 +4,13 @@ var mainEl = document.querySelector(".welcome");
 var answerEl = document.querySelector(".info");
 var startBtn = document.querySelector("#start");
 var scoreBtn = document.querySelector(".highscore");
+var restartBtn = document.querySelector(".reset");
 var resultEl = document.querySelector(".result");
 var endEl = document.querySelector(".end");
 var number = 0;
-var highScores = [];
-var score = 0;
 var correct = 0;
 var wrong = 0;
-var timeLeft = 5;
+var timeLeft = 30;
 var timeInterval;
 var questions = [
     {
@@ -134,22 +133,26 @@ saveScore = function(event) {
             return;
         }
         else {
-            var highScoresObj = {
-                initials: playInitials,
-                score: correct
-            }
-            highScores.push(highScoresObj);
-            localStorage.setItem("scores", JSON.stringify(highScores));
+            localStorage.setItem("initials", playInitials);
+            localStorage.setItem("score", correct);
         }
     }
-    startQuiz();
 }
 
 function highScores() {
-    
+    var score = localStorage.getItem("score");
+    var initials = localStorage.getItem("initials");
+    if (!score || !initials) {
+        alert("No high score yet!");
+        return;
+    }
+    else {
+        alert("Highscore belongs to " + initials + " with a score of " + score + "!");
+    }
 }
 
 startBtn.addEventListener("click", startQuiz);
+restartBtn.addEventListener("click", startQuiz);
 scoreBtn.addEventListener("click", highScores);
 answerEl.addEventListener("click", answerGuess);
 endEl.addEventListener("click", saveScore);
