@@ -146,8 +146,8 @@ saveScore = function(event) {
 }
 
 var score = localStorage.getItem("score");
+var initials = localStorage.getItem("initials");
 function highScores() {
-    var initials = localStorage.getItem("initials");
     if (!score || !initials) {
         alert("No high score yet!");
         return;
